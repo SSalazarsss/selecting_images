@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select the Character</title>
+    <style>
+body {
+  background-image: url("https://i.kym-cdn.com/photos/images/original/000/517/095/80c.jpg");
+  background-color: beige;
+}
+
+#container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*   height: 570px; */
+  width: 70%;
+  margin: auto;
+  /*   text-align: center; */
+  background: rgb(63, 127, 251);
+  background: radial-gradient(
+    circle,
+    rgba(63, 127, 251, 1) 0%,
+    rgba(252, 70, 107, 1) 100%
+  );
+  padding: 1rem;
+  border-radius: 50px;
+  color: white;
+  box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  /*   text-align: center; */
+}
+
+#select-character-area {
+  /*   width: 500px; */
+  /*   height: 500px; */
+  /*   display: inline-block;
+  text-align: center; */
+  /*   display: block; */
+  /*   margin-left: auto; */
+  /*   margin-right: auto; */
+}
+
+select {
+  display: block;
+  text-align: center;
+  font-size: 30px;
+  /*   margin-left */
+  color: white;
+  background-color: #fc466b;
+  border-radius: 50px;
+}
+
+    </style>
+</head>
+<body>
+    <div id="container">
+
+        <div id="select-character-area">
+          <img src="" width="300" height="530" id="character-image" alt="character-select-image" />
+          <select name="image-choice" id="image-select">
+            <option value="" disabled selected>Select an image</option>
+            <option value="character0"> Jonathan Joestar</option>
+            <option value="character1"> Joseph Joestar</option>
+            <option value="character2"> Jotaro Kujo</option>
+            <option value="character3"> Josuke Jhigashikata</option>
+            <option value="character4"> Giorno Brando</option>
+            <option value="character5"> Jolyne Kujo</option>
+          </select>
+      
+        </div>
+      
+      </div>
+    <script>
+const imageSelect = document.getElementById("image-select");
+const characterImg = document.getElementById("character-image");
+
+const characterZeroSrc =
+  "https://64.media.tumblr.com/092dad5f9020582055bf77b255617501/tumblr_nknppk7ql41sh11j9o1_500.png";
+
+const characterOneSrc =
+  "https://64.media.tumblr.com/b7838d2d8cfc5eee0ba7d7855cb3cd29/28438d61d560a869-92/s1280x1920/6d7e6d113730919e41234e5d5be7eb5beda38829.png";
+
+const characterTwoSrc =
+  "https://static.wikia.nocookie.net/vsdebating/images/8/89/EoHJotaro.png";
+
+const characterThreeSrc =
+  "https://static.wikia.nocookie.net/eyes-of-heaven-jjba/images/e/e7/JosukeRender.png";
+
+const characterFourSrc =
+  "https://static.wikia.nocookie.net/vsbattles/images/0/02/GIOGIOFIVE.png";
+
+const characterFiveSrc =
+  "https://64.media.tumblr.com/1db479c1b85f51693898871ab126b670/b8fe44f1546196a7-e4/s1280x1920/0450607fd884140daea89ba78f8ecd095de8524a.png";
+
+const characterSelectSrc =
+  "https://64.media.tumblr.com/092dad5f9020582055bf77b255617501/tumblr_nknppk7ql41sh11j9o1_500.png";
+
+characterImg.src = characterSelectSrc;
+
+imageSelect.addEventListener("change", function () {
+  console.log(this.value);
+  let userChoice = this.value;
+  if (userChoice === "character0") {
+    characterImg.src = characterZeroSrc;
+  } else if (userChoice === "character1") {
+    characterImg.src = characterOneSrc;
+  } else if (userChoice === "character2") {
+    characterImg.src = characterTwoSrc;
+  } else if (userChoice === "character3") {
+    characterImg.src = characterThreeSrc;
+  } else if (userChoice === "character4") {
+    characterImg.src = characterFourSrc;
+  } else if (userChoice === "character5") {
+    characterImg.src = characterFiveSrc;
+  }
+});
+
+    </script>
+</body>
+</html>
